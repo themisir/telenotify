@@ -102,3 +102,6 @@ typings/
 # Keys
 .keys/*.key
 .keys/*.key.pub
+
+# Typescript
+/dist

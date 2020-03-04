@@ -12,6 +12,8 @@ bot.use(session());
 bot.start(async ctx => {
   await ctx.reply(messages.start);
 
+  ctx.session.doing = undefined;
+
   if (process.env.BOT_PASSWORD) {
     ctx.session.passwordAsked = true;
     await ctx.reply(messages.passwordNotice);
