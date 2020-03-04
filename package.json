@@ -1,5 +1,5 @@
 {
-  "name": "telenotify_bot",
+  "name": "@telenotify/bot",
   "version": "1.0.0",
   "description": "Notification bot for telegram",
   "main": "index.js",

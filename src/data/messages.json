@@ -1,8 +1,8 @@
 {
-  "help": "❔ TelenotifyBot is a bot to notify critical updates to yourself using REST api.\nCheck out REST api docs here: https://github.com/TheMisir/telenotify_bot/docs/rest.md\nCommands:\n/add - Creates a new token",
-  "start": "Welcome to TelenotifyBot.",
-  "key": "Here is your api token. Do not share it with someone else. The keys can not be repaired or released!\n\n%s",
-  "namePrompt": "Please choose a name for the new key:",
+  "help": "I will notify you about critical updates using REST api.\n\nCheck out REST api docs here: https://github.com/themisir/telenotify_bot\n\nCommands:\n/newkey - Creates a new token",
+  "start": "Hello, I am 🔔 TelenotifyBot.\nIf you want to learn more about me, type /help.",
+  "key": "Here is your api token. Do not share it with someone else.\n\n%s\n\nThe keys can not be repaired or released!",
+  "namePrompt": "Please choose a name:",
   "notification": "%s: %s",
   "cancelled": "Ok!",
   "passwordNotice": "This bot is protected with password by bot owner.",

@@ -11,7 +11,7 @@ function start(bot: Telegraf<ContextMessageUpdate>) {
   const app = express();
   const port = process.env.PORT || 1234;
 
-  app.get("/api", async (req, res) => {
+  app.get("/send", async (req, res) => {
     const { key: token, text } = req.query;
 
     if (!token) {
