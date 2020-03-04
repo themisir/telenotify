@@ -1,19 +1,13 @@
 #!/bin/sh
 
-UPSTREAM=${1:-'@{u}'}
-LOCAL=$(git rev-parse @)
-REMOTE=$(git rev-parse "$UPSTREAM")
-BASE=$(git merge-base @ "$UPSTREAM")
+changed=0
+git remote update && git status -uno | grep -q 'Your branch is behind' && changed=1
 
-if [ $LOCAL = $REMOTE ]; then
-  echo "Up-to-date"
-elif [ $LOCAL = $BASE ]; then
-  echo "Pulling"
+if [ $changed = 1 ]; then
   git pull
   yarn
   pm2 restart notifsrv
-elif [ $REMOTE = $BASE ]; then
-  echo "Need to push"
+  echo "Updated successfully";
 else
-  echo "Diverged"
+  echo "Up-to-date"
 fi
