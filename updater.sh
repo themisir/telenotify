@@ -10,6 +10,7 @@ if [ $LOCAL = $REMOTE ]; then
 elif [ $LOCAL = $BASE ]; then
   echo "Pulling"
   git pull
+  yarn
   pm2 restart notifsrv
 elif [ $REMOTE = $BASE ]; then
   echo "Need to push"
