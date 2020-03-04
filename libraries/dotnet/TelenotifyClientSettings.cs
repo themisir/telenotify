@@ -1,4 +1,4 @@
-namespace Telenotify
+namespace Telenotify.Client
 {
     public class TelenotifyClientSettings
     {

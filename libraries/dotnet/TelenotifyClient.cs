@@ -1,8 +1,7 @@
-﻿using System;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Telenotify
+namespace Telenotify.Client
 {
     public class TelenotifyClient
     {
