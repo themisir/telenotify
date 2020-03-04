@@ -4,7 +4,7 @@ import messages from "../data/messages.json";
 import "../helpers/format";
 import SessionContextMessageUpdate from "../helpers/sessionctx";
 
-const bot = new Telegraf<SessionContextMessageUpdate>();
+const bot = new Telegraf<SessionContextMessageUpdate>(process.env.BOT_TOKEN);
 const banTimeout = parseInt(process.env.BAN_TIMEOUT, 10);
 
 bot.use(session());
