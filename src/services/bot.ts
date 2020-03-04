@@ -74,16 +74,13 @@ bot.command("cancel", ctx => {
 });
 
 bot.on("message", ctx => {
-  // @ts-ignore
-  const action: string | undefined = ctx.session.doing;
-
-  if (action === "adding" && ctx.message.text) {
+  if (ctx.session.doing === "adding" && ctx.message.text) {
     const token = jwt.sign({
       subject: ctx.chat.id,
       name: ctx.message.text.substr(0, 25)
     });
     ctx.reply(messages.key.format(token));
-    ctx.session.action = undefined;
+    ctx.session.doing = undefined;
   }
 });
 
