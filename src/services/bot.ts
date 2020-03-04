@@ -4,8 +4,8 @@ import messages from "../data/messages.json";
 import "../helpers/format";
 import SessionContextMessageUpdate from "../helpers/sessionctx";
 
-const bot = new Telegraf<SessionContextMessageUpdate>(process.env.bot_token);
-const banTimeout = parseInt(process.env.ban_timeout, 10);
+const bot = new Telegraf<SessionContextMessageUpdate>();
+const banTimeout = parseInt(process.env.BAN_TIMEOUT, 10);
 
 bot.use(session());
 
@@ -25,9 +25,9 @@ bot.help(ctx => {
   ctx.reply(messages.help);
 });
 
-if (process.env.bot_password) {
+if (process.env.BOT_PASSWORD) {
   bot.use(async (ctx, next) => {
-    if (ctx.session.password === process.env.bot_password) {
+    if (ctx.session.password === process.env.BOT_PASSWORD) {
       return next();
     }
 
@@ -42,7 +42,7 @@ if (process.env.bot_password) {
     }
 
     if (ctx.session.passwordAsked) {
-      if (ctx.message.text === process.env.bot_password) {
+      if (ctx.message.text === process.env.BOT_PASSWORD) {
         ctx.session.password = ctx.message.text;
         ctx.reply(messages.passwordSuccess);
       } else {
