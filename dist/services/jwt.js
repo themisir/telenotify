@@ -8,7 +8,7 @@ const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const logger_1 = __importDefault(require("./logger"));
 const logger = new logger_1.default('jwt');
-let privateKey = process.env.JWT_KEY;
+let privateKey = process.env.jwt_key;
 if (!privateKey) {
     fs_1.default.readFile(path_1.default.join(process.env.APPROOT, ".keys", "jwtRS256.key"), { encoding: "utf8" }, (err, data) => {
         if (err)
@@ -18,13 +18,13 @@ if (!privateKey) {
 }
 function sign(payload) {
     return jsonwebtoken_1.default.sign(payload, privateKey, {
-        issuer: process.env.JWT_ISSUER
+        issuer: process.env.jwt_issuer
     });
 }
 function verify(token) {
     try {
         const payload = jsonwebtoken_1.default.verify(token, privateKey, {
-            issuer: process.env.JWT_ISSUER
+            issuer: process.env.jwt_issuer
         });
         return {
             valid: true,

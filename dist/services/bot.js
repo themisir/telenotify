@@ -23,8 +23,8 @@ const telegraf_1 = __importStar(require("telegraf"));
 const jwt_1 = __importDefault(require("./jwt"));
 const messages_json_1 = __importDefault(require("../data/messages.json"));
 require("../helpers/format");
-const bot = new telegraf_1.default(process.env.BOT_TOKEN);
-const banTimeout = parseInt(process.env.BAN_TIMEOUT, 10);
+const bot = new telegraf_1.default(process.env.bot_token);
+const banTimeout = parseInt(process.env.ban_timeout, 10);
 bot.use(telegraf_1.session());
 bot.start((ctx) => __awaiter(void 0, void 0, void 0, function* () {
     yield ctx.reply(messages_json_1.default.start);
@@ -37,9 +37,9 @@ bot.start((ctx) => __awaiter(void 0, void 0, void 0, function* () {
 bot.help(ctx => {
     ctx.reply(messages_json_1.default.help);
 });
-if (process.env.BOT_PASSWORD) {
+if (process.env.bot_password) {
     bot.use((ctx, next) => __awaiter(void 0, void 0, void 0, function* () {
-        if (ctx.session.password === process.env.BOT_PASSWORD) {
+        if (ctx.session.password === process.env.bot_password) {
             return next();
         }
         if (ctx.session.bannedUntil) {
@@ -53,7 +53,7 @@ if (process.env.BOT_PASSWORD) {
             }
         }
         if (ctx.session.passwordAsked) {
-            if (ctx.message.text === process.env.BOT_PASSWORD) {
+            if (ctx.message.text === process.env.bot_password) {
                 ctx.session.password = ctx.message.text;
                 ctx.reply(messages_json_1.default.passwordSuccess);
             }

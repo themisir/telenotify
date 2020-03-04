@@ -4,7 +4,7 @@ import path from "path";
 import Logger from "./logger";
 
 const logger = new Logger('jwt');
-let privateKey: string = process.env.JWT_KEY;
+let privateKey: string = process.env.jwt_key;
 
 if (!privateKey) {
   fs.readFile(
@@ -19,14 +19,14 @@ if (!privateKey) {
 
 function sign(payload: string | object | Buffer) {
   return jwt.sign(payload, privateKey, {
-    issuer: process.env.JWT_ISSUER
+    issuer: process.env.jwt_issuer
   });
 }
 
 function verify(token: string) {
   try {
     const payload = jwt.verify(token, privateKey, {
-      issuer: process.env.JWT_ISSUER
+      issuer: process.env.jwt_issuer
     });
     return {
       valid: true,
