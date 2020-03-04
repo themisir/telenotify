@@ -9,7 +9,8 @@
   "private": false,
   "scripts": {
     "build": "tsc",
-    "start": "tsc && node .",
+    "start": "node .",
+    "dev": "tsc && node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
