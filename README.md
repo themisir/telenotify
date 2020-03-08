@@ -1,4 +1,6 @@
-[![telenotify](https://i.imgur.com/a6hmtwZ.png)](https://i.imgur.com/a6hmtwZ.png)
+<p align="center">
+  <img width="64" height="64" src="https://i.imgur.com/a6hmtwZ.png)](https://i.imgur.com/a6hmtwZ.png">
+</p>
 
 # Telenotify
 
