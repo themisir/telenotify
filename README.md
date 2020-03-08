@@ -33,4 +33,4 @@ You can simply start telenotify server by running `node .` command inside teleno
 
 ---
 
-[Found an issue](https://github.com/TheMisir/telenotify/issues/new) -- [⭐](https://github.com/TheMisir/telenotify)
+[Found an issue](https://github.com/TheMisir/telenotify/issues/new)  [⭐](https://github.com/TheMisir/telenotify)
