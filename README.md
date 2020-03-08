@@ -1,3 +1,5 @@
+[![telenotify](https://i.imgur.com/a6hmtwZ.png)](https://i.imgur.com/a6hmtwZ.png)
+
 # Telenotify
 
 Telenotify is an open source software to send notifications to telegram users or groups.
