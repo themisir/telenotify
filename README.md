@@ -24,13 +24,6 @@
   </a>
 </div>
 
-Get notified when...
-
-* Customer makes a purchase
-* Software gets deployed to server
-* A critical bug or exception catched
-* User send feedback
-
 ## 🔮 Installation
 
 Firstly you need to clone this repo to your server.
